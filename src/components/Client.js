@@ -1,5 +1,5 @@
 
-import { getClients } from '../Store/Actions/Client';
+import { deleteClient, getClients } from '../Store/Actions/Client';
 import {connect} from "react-redux";
 import React, { Component } from 'react'
 
@@ -8,6 +8,9 @@ class Client extends Component {
         this.props.getClients();
         console.log(this.props.clients)
     }
+    onDeleteHandler = (id) => {
+        this.props.deleteClient(id); 
+    }
     render() {
         const {clients} = this.props
         return (
@@ -15,7 +18,7 @@ class Client extends Component {
                 {clients.map((client)=>{
                     return (
                         <ul>
-                            <li>{client.name}</li>
+                            <li  onClick = {() => this.props.onDeleteHandler(client.id)}>{client.name}</li>
                         </ul>
                     )
                 })}
@@ -31,7 +34,8 @@ const mapStateToProps = (state) =>{
 }
 const mapDispatchToProps = (dispatch) => {
     return{
-        getClients:() => dispatch(getClients())
+        getClients:() => dispatch(getClients()),
+        onDeleteHandler: (id) => dispatch(deleteClient(id))
     };
 };
 
