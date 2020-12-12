@@ -2,6 +2,9 @@
 import { deleteClient, getClients } from '../Store/Actions/Client';
 import {connect} from "react-redux";
 import React, { Component } from 'react'
+import { Link } from "react-router-dom"
+import { BsFillTrashFill } from "react-icons/bs";
+import { GoArrowRight } from "react-icons/go";
 
 class Client extends Component {
     componentDidMount(){
@@ -9,7 +12,9 @@ class Client extends Component {
         console.log(this.props.clients)
     }
     onDeleteHandler = (id) => {
-        this.props.deleteClient(id); 
+        this.props.deleteClient(id);
+        // console.log(id) 
+        this.props.history.push("/");
     }
     render() {
         const {clients} = this.props
@@ -18,7 +23,7 @@ class Client extends Component {
                 {clients.map((client)=>{
                     return (
                         <ul>
-                            <li  onClick = {() => this.props.onDeleteHandler(client.id)}>{client.firstName}</li>
+                            <li>{client.firstName}<BsFillTrashFill onClick = {() => this.props.onDeleteHandler(client._id)}/><Link to = {`/client/detail/${client._id}`}><GoArrowRight/></Link></li>
                         </ul>
                     )
                 })}
@@ -29,7 +34,7 @@ class Client extends Component {
 
 const mapStateToProps = (state) =>{
     return{
-        clients: state.clients
+        clients: state.client.clients
     }
 }
 const mapDispatchToProps = (dispatch) => {

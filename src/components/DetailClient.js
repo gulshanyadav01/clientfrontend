@@ -6,23 +6,27 @@ import { connect } from "react-redux"
 class DetailClient extends Component {
     componentDidMount(){
         
-        this.props.detailClient(this.props.match.params.id); 
+        this.props.detailClient(this.props.match.params.id);
+        console.log(this.props.match.params.id); 
+    
     }
 
     render() {
-        const {name,email, id } = this.props.client; 
+        const {firstName, lastName, phone , balance ,email } = this.props.client; 
         return (
             <div>
-                <h1>{name}</h1>
+                <h1>{balance}</h1>
                 <h1>{email}</h1>
-                <h1>{id}</h1>
+                <p>{firstName}</p>
+                <p>{lastName}</p>
+                <p>{phone}</p>
             </div>
         )
     }
 }
 const mapStateToProps = (state) => {
     return{
-        client: state.client
+        client: state.client.client.client
     }
 }
 const mapDispatchToProps = (dispatch) => {

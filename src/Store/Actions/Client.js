@@ -14,19 +14,23 @@ export const getClients =() => async dispatch => {
     })
 }
 
-export const detailClient = (id) => {
-    return {
+export const detailClient = (id) => async dispatch => {
+    const res = await axios.get(`http://localhost:5000/client/getclientbyid/${id}`)
+    dispatch({
         type:DETAIL_CLIENT,
-        payload:id
-    }
+        payload:res.data
+    })
 }
 
 
-export const deleteClient = (id) => {
-    return{
+export const deleteClient = (id) => async dispatch =>  {
+    console.log("hi")
+    await axios.delete(`http://localhost:5000/client/deleteclient/${id}`)
+    console.log("hello")
+    dispatch({
         type: DELETE_CLIENT,
         payload: id 
-    }
+    })
 }
 
 export const addClient = (data) =>  dispatch =>  {
