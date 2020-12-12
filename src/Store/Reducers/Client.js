@@ -1,5 +1,5 @@
 // import React, {useState} from 'react'
-import { DELETE_CLIENT, DETAIL_CLIENT, GET_CLIENTS } from '../Actions/Types';
+import { ADD_CLIENT, DELETE_CLIENT, DETAIL_CLIENT, GET_CLIENTS } from '../Actions/Types';
 
 const initialState = {
 
@@ -36,6 +36,11 @@ const  Client = (state = initialState, action) =>  {
                         client.id !== action.payload
                     )
                 })
+            }
+        case ADD_CLIENT:
+            return{
+                ...state,
+                clients: [...state.clients, action.payload]  
             }
         default:
             return state
