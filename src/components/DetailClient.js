@@ -8,6 +8,7 @@ class DetailClient extends Component {
         
         this.props.detailClient(this.props.match.params.id);
         console.log(this.props.match.params.id); 
+        // console.log(this.props)
     
     }
 
