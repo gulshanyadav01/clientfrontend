@@ -4,11 +4,11 @@ import { DELETE_CLIENT, DETAIL_CLIENT, GET_CLIENTS } from '../Actions/Types';
 const initialState = {
 
     clients:[
-        {id:1, name:"gulshan", email:"gulshany01@gmail.com"},
-        {id:2, name:"gulshan", email:"gulshany01@gmail.com"},
-        {id:3, name:"gulshan", email:"gulshany01@gmail.com"},
-        {id:4, name:"gulshan", email:"gulshany01@gmail.com"},
-        {id:5, name:"gulshan", email:"gulshany01@gmail.com"}
+        // {id:1, name:"gulshan", email:"gulshany01@gmail.com"},
+        // {id:2, name:"gulshan", email:"gulshany01@gmail.com"},
+        // {id:3, name:"gulshan", email:"gulshany01@gmail.com"},
+        // {id:4, name:"gulshan", email:"gulshany01@gmail.com"},
+        // {id:5, name:"gulshan", email:"gulshany01@gmail.com"}
 
     ],
     client:{}
@@ -17,9 +17,10 @@ const initialState = {
 const  Client = (state = initialState, action) =>  {
     switch(action.type){
         case GET_CLIENTS:
+            
             return{
                 ...state,
-                clients: state.clients
+                clients: action.payload
 
             }
         case DETAIL_CLIENT:

@@ -18,7 +18,7 @@ class Client extends Component {
                 {clients.map((client)=>{
                     return (
                         <ul>
-                            <li  onClick = {() => this.props.onDeleteHandler(client.id)}>{client.name}</li>
+                            <li  onClick = {() => this.props.onDeleteHandler(client.id)}>{client.firstName}</li>
                         </ul>
                     )
                 })}
