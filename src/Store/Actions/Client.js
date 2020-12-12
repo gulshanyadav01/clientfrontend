@@ -18,7 +18,7 @@ export const detailClient = (id) => async dispatch => {
     const res = await axios.get(`http://localhost:5000/client/getclientbyid/${id}`)
     dispatch({
         type:DETAIL_CLIENT,
-        payload:res.dat
+        payload:res.data
     })
 }
 
