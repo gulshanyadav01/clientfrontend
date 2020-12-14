@@ -7,14 +7,22 @@ import {
 
 
 const initialState  = {
-    token:null
+    token:null,
+    error: null,
+    loading: true
+
 }
 
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case REGISTER_SUCCESS:
-            console.log("auth reducer")
-            return state;
+            localStorage.setItem("token", action.payload.token);
+            return{
+                ...state,
+                token: localStorage.getItem("token"),
+                error: null,
+                loading: false
+            }
     
         default:
             return state;

@@ -14,6 +14,7 @@ class Client extends Component {
     componentDidMount(){
         this.props.getClients();
         // console.log(this.props.clients)
+        console.log(this.props.token);
     }
     onDeleteHandler = (id) => {
         this.props.deleteClient(id);
@@ -76,7 +77,8 @@ class Client extends Component {
 
 const mapStateToProps = (state) =>{
     return{
-        clients: state.client.clients
+        clients: state.client.clients,
+        token: state.auth.token
     }
 }
 const mapDispatchToProps = (dispatch) => {
