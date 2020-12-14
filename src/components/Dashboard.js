@@ -2,9 +2,15 @@ import React from 'react'
 import { AiFillDashboard } from "react-icons/ai";
 import {Link} from "react-router-dom"
 import {FaHome} from "react-icons/fa";
+import {connect} from "react-redux";
+import {logout} from "../Store/Actions/Auth";
 
 
-const Dashboard = ()  => {
+const Dashboard = ({logout})  => {
+    const logoutHandler = () => {
+        console.log("hi i am logout ")
+        logout();
+    }
     return (
         
         <div className= "w-1/6 h-screen rounded " style = {{backgroundColor:"#131931", border:"solid linear-gradient(red, orange) 2px"}}>
@@ -17,6 +23,7 @@ const Dashboard = ()  => {
               <Link to = "/">About</Link>
               <Link to = "/">Contact</Link>
               <Link to  = "/register">Register</Link>
+              <button onClick = {logoutHandler}>Logout</button>
           </nav>
           </div>
         </div>
@@ -25,4 +32,4 @@ const Dashboard = ()  => {
     )
 }
 
-export default Dashboard;
+export default connect(null, {logout})(Dashboard);

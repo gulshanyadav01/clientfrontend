@@ -3,7 +3,8 @@ import {
     REGISTER_FAIL,
     REGISTER_SUCCESS,
     LOGIN_FAIL,
-    LOGIN_SUCCESS
+    LOGIN_SUCCESS,
+    LOGOUT
 } from "./Types"
 
 export const registerUser = (data) => async dispatch => {
@@ -32,5 +33,20 @@ export const registerUser = (data) => async dispatch => {
             type:REGISTER_FAIL,
             payload:res.msg
         })
+    }
+}
+
+
+export const logout = ()  =>  dispatch  => {
+    console.log("hi i am logout action")
+    try{
+        
+        dispatch({
+            type:LOGOUT,
+        })
+
+
+    }catch(error){
+        console.log(error);
     }
 }
