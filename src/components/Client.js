@@ -23,11 +23,9 @@ class Client extends Component {
     render() {
         const {clients} = this.props
         return (
-            <div className = "flex">
-                <div className= "w-1/6 mt-3 rounded " style = {{backgroundColor:"#131931", border:"solid linear-gradient(red, orange) 2px"}}>
-                    <h1 className = "font-bold mt-2 h-96 "><AiFillDashboard/>Dashboard</h1>
-                </div>
-                <div className = "flex">
+            
+                
+            <div className = "flex" >
                 <div style = {{backgroundColor:"#0E1122"}} className = "mt-6 ml-4 h-30">
             <table>
             <tr>
@@ -68,7 +66,6 @@ class Client extends Component {
             </div>
             <div className = "mt-6 ml-4">
               <Link to = "/client/add"><button className = "px-3 py-2 rounded" style = {{backgroundImage:"linear-gradient(red, orange)"}} ><div className = "flex text-center"><BiMessageSquareAdd className = "text-blue-600 mt-1"/>Add Client </div></button></Link>  
-            </div>
             </div>
                 
             </div>
