@@ -49,6 +49,7 @@ export const login = (user) => async dispatch => {
             type:LOGIN_SUCCESS,
             payload:res.data
         })
+        userProfile();
     }catch(err){
         dispatch({
             type:LOGIN_FAIL
@@ -70,5 +71,15 @@ export const logout = ()  =>  dispatch  => {
 
     }catch(error){
         console.log(error);
+    }
+}
+
+export const userProfile  = () => async dispatch =>{
+    try{
+        const res = await axios.get("http://localhost:5000/user");
+        console.log(res.data);
+
+    }catch(error){
+
     }
 }

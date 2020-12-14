@@ -15,6 +15,7 @@ class Client extends Component {
         // console.log(this.props.clients)
         console.log(this.props.token);
         console.log(this.props.error)
+        console.log(this.props.user);
     }
     onDeleteHandler = (id) => {
         this.props.deleteClient(id);
@@ -88,7 +89,8 @@ const mapStateToProps = (state) =>{
     return{
         clients: state.client.clients,
         token: state.auth.token,
-        error: state.auth.error
+        error: state.auth.error,
+        user:state.auth.user
     }
 }
 const mapDispatchToProps = (dispatch) => {

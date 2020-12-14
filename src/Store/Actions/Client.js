@@ -46,10 +46,21 @@ export const addClient = (data) =>  dispatch =>  {
         type: ADD_CLIENT,
         payload: res.data
         })
+        userProfile();
 
         
     })
     .catch(err =>{
         console.log(err);
     })
+}
+
+export const userProfile  = () => async dispatch =>{
+    try{
+        const res = await axios.get("http://localhost:5000/user");
+        console.log(res.data);
+
+    }catch(error){
+
+    }
 }
