@@ -53,7 +53,7 @@ export const login = (user) => async dispatch => {
     }catch(err){
         dispatch({
             type:LOGIN_FAIL
-        })
+        });
     }
 }
 
