@@ -19,4 +19,4 @@ const pReducer = persistReducer(persistConfig, rootReducer);
 
 
 export const store = createStore(pReducer  ,composeWithDevTools(applyMiddleware(...middleware))); 
-export const persistor = persistStore(store)
+export const persistor = persistStore(store);

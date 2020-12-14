@@ -24,10 +24,10 @@ class Client extends Component {
     }
     render() {
         const {clients} = this.props
-        return (
-            
-                
-            <div className = "flex" >
+        let data = <h1>please login</h1>
+        if(this.props.token){
+            data = (
+                <div className = "flex" >
                 <div style = {{backgroundColor:"#0E1122"}} className = "mt-6 ml-4 h-30">
             <table>
             <tr>
@@ -71,6 +71,15 @@ class Client extends Component {
             </div>
                 
             </div>
+            )
+
+        }
+        return (
+            
+                <div>
+                    {data}
+                </div>
+            
             
         )
     }

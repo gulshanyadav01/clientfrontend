@@ -1,19 +1,23 @@
 import React from "react"; 
-import Client from "./components/Client"
+// import Client from "./components/Client"
 import {Provider} from "react-redux"
-import {store} from "./Store/Store"
+// import {store} from "./Store/Store"
 // import DetailClient from "./components/DetailClient"
 // import {BrowserRouter as Router, Route, Switch} from "react-router-dom"; 
 // import AddClient from "./components/AddClient"
 // import Navbar from "./components/Navbar"
 import Layout from "./components/Layout"
 // import Register from "./components/Register"
+import {store , persistor}  from './Store/Store'
+import { PersistGate } from 'redux-persist/integration/react'
 
 const  App = () =>  {
   return (
     
     <Provider store = {store}>
-       <Layout/>
+      <PersistGate loading={null} persistor={persistor}>
+        <Layout/>
+      </PersistGate>
     </Provider>
   );
 }
