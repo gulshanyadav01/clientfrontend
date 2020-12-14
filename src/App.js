@@ -13,7 +13,7 @@ const  App = () =>  {
     <Provider store = {store}>
         <Router>
         <Switch>
-            <div className="App" style = {{backgroundColor:"#15192A", height:"100vh", color:"white", font:"bold"}}>
+            <div className="App" style = {{backgroundColor:"#0E1122", height:"100vh", color:"white", font:"bold"}}>
             <Navbar/>
               <Route exact path = "/" component = {Client} />
               <Route exact path = "/client/detail/:id" component = {DetailClient}/>
