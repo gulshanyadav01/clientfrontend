@@ -10,6 +10,12 @@ import Layout from "./components/Layout"
 // import Register from "./components/Register"
 import {store , persistor}  from './Store/Store'
 import { PersistGate } from 'redux-persist/integration/react'
+import SetAuthToken from "./utility/SetAuthToken"
+
+if(localStorage.token){
+  SetAuthToken(localStorage.token);
+
+}
 
 const  App = () =>  {
   return (

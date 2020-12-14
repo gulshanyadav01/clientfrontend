@@ -8,6 +8,8 @@ import Register from './Register';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import DetailClient from "./DetailClient"
 import AddClient from "./AddClient"
+import Login from "./Login";
+
 const  Layout = () => {
     return (
        
@@ -22,6 +24,7 @@ const  Layout = () => {
               <Route exact path = "/client/detail/:id" component = {DetailClient}/>
               <Route exact path = "/client/add" component = {AddClient}/>
               <Route exact path = "/register" component = {Register}/>
+              <Route exact path = "/login" component = {Login}/>
             </div>
             </div>
         </div>

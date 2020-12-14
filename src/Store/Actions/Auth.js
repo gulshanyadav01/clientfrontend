@@ -37,6 +37,28 @@ export const registerUser = (data) => async dispatch => {
 }
 
 
+export const login = (user) => async dispatch => {
+    try{
+        const {email, password} = user;
+        const loginUser = {
+            email,
+            password
+        }
+        const res = await axios.post("http://localhost:5000/user/login", loginUser);
+        dispatch({
+            type:LOGIN_SUCCESS,
+            payload:res.data
+        })
+    }catch(err){
+        dispatch({
+            type:LOGIN_FAIL
+        })
+    }
+}
+
+
+
+
 export const logout = ()  =>  dispatch  => {
     console.log("hi i am logout action")
     try{
