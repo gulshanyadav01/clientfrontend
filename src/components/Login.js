@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import {connect } from "react-redux"
 import {useHistory} from "react-router-dom"
-import { AiFillDashboard } from "react-icons/ai";
 import { login } from '../Store/Actions/Auth';
 
 

@@ -1,6 +1,5 @@
 
 import axios from "axios";
-import { Redirect } from "react-router-dom";
 import { ADD_CLIENT, DELETE_CLIENT, DETAIL_CLIENT, GET_CLIENTS } from "./Types"
 // import {Redirect} from "react-router-dom";
 

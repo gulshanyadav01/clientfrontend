@@ -3,9 +3,8 @@ import { deleteClient, getClients } from '../Store/Actions/Client';
 import {connect} from "react-redux";
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
-import { BsFillTrashFill } from "react-icons/bs";
 import { GoArrowRight } from "react-icons/go";
-import { AiFillDashboard } from "react-icons/ai";
+
 import {BiMessageSquareAdd} from "react-icons/bi"
 
 
@@ -44,7 +43,7 @@ class Client extends Component {
                            <td className = " font-bold rounded px-6 py-2" style = {{backgroundColor:"#1F263C", color:"#626E91", border:"solid #15192A 3px "}}> {client.email}</td>
                            <td className = " font-bold rounded px-6 py-2" style = {{backgroundColor:"#1F263C", color:"#626E91", border:"solid #15192A 3px "}}> {client.phone}</td>
                            <td className = " font-bold rounded px-6 py-2" style = {{backgroundColor:"#1F263C", color:"#626E91", border:"solid #15192A 3px "}}> {client.balance}</td>
-                           <td className = " font-bold px-6 py-2"> <Link to = {`/client/detail/${client._id}`}><GoArrowRight className = "bg-red-600 text-blue-400 font-bold-2xl rounded w-16 h-8  " style = {{backgroundColor:"#2B5DFF"}}/></Link> </td>
+                           <td className = " font-bold px-10 py-2   "> <Link to = {`/client/detail/${client._id}`} className = " bg-red-100 px-2 py-1   rounded text-center hover:bg-blue-500 font-bold" style = {{backgroundImage:"radial-gradient(red, orange)", color:"white"}}  ><GoArrowRight className = "mr-2 text-blue-400 font-bold-2xl inline rounded w-4 h-4  rounded-xl " style = {{backgroundColor:"#2B5DFF"}}/>Detail</Link> </td>
  
                        </tr>
                        </>

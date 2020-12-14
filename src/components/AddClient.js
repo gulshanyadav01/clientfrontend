@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import {connect } from "react-redux"
 import {addClient} from "../Store/Actions/Client"
 import {useHistory} from "react-router-dom"
-import { AiFillDashboard } from "react-icons/ai";
+
 
 
 const  AddClient = ({addClient}) =>  {

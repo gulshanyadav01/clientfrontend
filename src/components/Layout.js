@@ -1,7 +1,5 @@
 import React from 'react'
 import Navbar from "./Navbar"
-// import Dashboard from ""
-import { AiFillDashboard } from "react-icons/ai";
 import Client from "./Client";
 import Dashboard from "./Dashboard"
 import Register from './Register';
