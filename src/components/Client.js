@@ -13,7 +13,7 @@ import {BiMessageSquareAdd} from "react-icons/bi"
 class Client extends Component {
     componentDidMount(){
         this.props.getClients();
-        console.log(this.props.clients)
+        // console.log(this.props.clients)
     }
     onDeleteHandler = (id) => {
         this.props.deleteClient(id);

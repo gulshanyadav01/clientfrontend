@@ -16,6 +16,7 @@ const Dashboard = ()  => {
               <Link to = "/"><FaHome className = "inline mr-1" style = {{color:"#146FD6"}}/>Home</Link>
               <Link to = "/">About</Link>
               <Link to = "/">Contact</Link>
+              <Link to  = "/register">Register</Link>
           </nav>
           </div>
         </div>
