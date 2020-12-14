@@ -13,7 +13,7 @@ class DetailClient extends Component {
     }
 
     render() {
-        const {firstName, lastName, phone , balance ,email } = this.props.client; 
+        const {firstName, lastName, phone , balance ,email } = this.props.user; 
         return (
             <div>
                 <h1>{balance}</h1>
@@ -27,7 +27,7 @@ class DetailClient extends Component {
 }
 const mapStateToProps = (state) => {
     return{
-        client: state.client.client.client
+        user: state.client.client.client
     }
 }
 const mapDispatchToProps = (dispatch) => {

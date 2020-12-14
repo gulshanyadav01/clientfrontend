@@ -28,7 +28,7 @@ const Dashboard = ({logout})  => {
               <Link to = "/" className = " hover:bg-black px-2 py-4"><FcAbout className = "inline mr-1" style = {{color:"#146FD6"}}/>About</Link>
               <Link to = "/" className = " hover:bg-black px-2 py-4"><FcContacts className = "inline mr-1" style = {{color:"#146FD6"}} />Contact</Link>
               <Link to  = "/register" className = " hover:bg-black px-2 py-4"><GoSignIn className = "inline mr-1" style = {{color:"#146FD6"}} />Register</Link>
-              <Link to ="!#" className = " hover:bg-black px-2 py-4"><button onClick = {logoutHandler} ><FaSignOutAlt className = "inline mr-1" style = {{color:"#146FD6"}}/>Logout</button></Link>
+              <Link to ="#" className = " hover:bg-black px-2 py-4"><button onClick = {logoutHandler} ><FaSignOutAlt className = "inline mr-1" style = {{color:"#146FD6"}}/>Logout</button></Link>
               <Link to = "/login" className = " hover:bg-black px-2 py-4"><FaSignInAlt className = "inline mr-1" style = {{color:"#146FD6"}} />Login</Link>
           </nav>
           </div>
