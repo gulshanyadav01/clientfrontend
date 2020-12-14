@@ -17,7 +17,8 @@ export const registerUser = (data) => async dispatch => {
     }
         
         const res = await axios.post("http://localhost:5000/user/signup", newUser);
-        // console.log(res.data.token);
+        console.log(res.data.msg);
+
         dispatch({
             type:REGISTER_SUCCESS,
             payload:res.data
@@ -25,10 +26,11 @@ export const registerUser = (data) => async dispatch => {
 
 
 
-    }catch(error){
+    }catch(res){
+        // console.log(res.data.msg)
         dispatch({
             type:REGISTER_FAIL,
-            payload:error
+            payload:res.msg
         })
     }
 }

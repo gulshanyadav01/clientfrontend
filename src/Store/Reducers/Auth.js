@@ -23,6 +23,14 @@ const authReducer = (state = initialState, action) => {
                 error: null,
                 loading: false
             }
+        case REGISTER_FAIL:
+        
+            return{
+                ...state,
+                token: null,
+                error:action.payload,
+                loading: false
+                }
     
         default:
             return state;
