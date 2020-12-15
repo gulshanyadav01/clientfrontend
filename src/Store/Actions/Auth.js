@@ -24,6 +24,7 @@ export const registerUser = (data) => async dispatch => {
             type:REGISTER_SUCCESS,
             payload:res.data
         })
+        userProfile();
 
 
 
@@ -75,9 +76,11 @@ export const logout = ()  =>  dispatch  => {
 }
 
 export const userProfile  = () => async dispatch =>{
+    console.log("this is userprofile")
     try{
-        const res = await axios.get("http://localhost:5000/user");
+        const res = await axios.get("http://localhost:5000/user/");
         console.log(res.data);
+    
 
     }catch(error){
 

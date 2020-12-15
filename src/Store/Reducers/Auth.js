@@ -10,7 +10,8 @@ import {
 const initialState  = {
     token:null,
     error: null,
-    loading: true
+    loading: true,
+    user:null
 
 }
 

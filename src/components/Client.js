@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 import { GoArrowRight } from "react-icons/go";
+import {userProfile} from "../Store/Actions/Auth";
 
 import {BiMessageSquareAdd} from "react-icons/bi"
 
@@ -16,6 +17,7 @@ class Client extends Component {
         console.log(this.props.token);
         console.log(this.props.error)
         console.log(this.props.user);
+        this.props.userProfile();
     }
     onDeleteHandler = (id) => {
         this.props.deleteClient(id);
@@ -96,7 +98,8 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) => {
     return{
         getClients:() => dispatch(getClients()),
-        onDeleteHandler: (id) => dispatch(deleteClient(id))
+        onDeleteHandler: (id) => dispatch(deleteClient(id)),
+        userProfile:() => dispatch(userProfile())
     };
 };
 
