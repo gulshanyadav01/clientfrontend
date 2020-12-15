@@ -4,7 +4,8 @@ import {
     REGISTER_SUCCESS,
     LOGIN_FAIL,
     LOGIN_SUCCESS,
-    LOGOUT
+    LOGOUT,
+    USER_PROFILE
 } from "./Types"
 
 export const registerUser = (data) => async dispatch => {
@@ -24,7 +25,7 @@ export const registerUser = (data) => async dispatch => {
             type:REGISTER_SUCCESS,
             payload:res.data
         })
-        userProfile();
+        // userProfile();
 
 
 
@@ -50,7 +51,7 @@ export const login = (user) => async dispatch => {
             type:LOGIN_SUCCESS,
             payload:res.data
         })
-        userProfile();
+        // userProfile();
     }catch(err){
         dispatch({
             type:LOGIN_FAIL
@@ -79,7 +80,11 @@ export const userProfile  = () => async dispatch =>{
     console.log("this is userprofile")
     try{
         const res = await axios.get("http://localhost:5000/user/");
-        console.log(res.data);
+        // console.log(res.data);
+        dispatch({
+            type:USER_PROFILE,
+            payload:res.data
+        })
     
 
     }catch(error){

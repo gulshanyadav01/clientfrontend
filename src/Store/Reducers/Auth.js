@@ -3,7 +3,8 @@ import {
     REGISTER_SUCCESS,
     LOGIN_FAIL,
     LOGIN_SUCCESS,
-    LOGOUT
+    LOGOUT,
+    USER_PROFILE
 } from "../Actions/Types"
 
 
@@ -24,8 +25,15 @@ const authReducer = (state = initialState, action) => {
                     ...state,
                     token: localStorage.getItem("token"),
                     error: null,
-                    loading: false
+                    loading: false,
                 }
+        case USER_PROFILE:
+            return{
+                ...state,
+                user:action.payload.user,
+                error:null
+                
+            }
         case REGISTER_FAIL:
         case LOGIN_FAIL:
             return{
