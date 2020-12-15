@@ -5,11 +5,11 @@ import { ADD_CLIENT, DELETE_CLIENT, DETAIL_CLIENT, GET_CLIENTS } from "./Types"
 
 
 export const getClients =() => async dispatch => {
-    const res = await axios.get("http://localhost:5000/client/getclients");
-    // console.log(res.data.clients);
+    const res = await axios.get("http://localhost:5000/client/getPushData");
+    console.log(res.data);
     dispatch({
         type:GET_CLIENTS,
-        payload:res.data.clients
+        payload:res.data
     })
 }
 
@@ -39,7 +39,7 @@ export const addClient = (data) =>  dispatch =>  {
             "Content-type":"application/json"
         }
     }
-    axios.post("http://localhost:5000/client/add", data, config )
+    axios.post("http://localhost:5000/client/postPushData", data, config )
     .then(res =>{
 
         dispatch({
