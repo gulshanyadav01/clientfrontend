@@ -1,4 +1,4 @@
-import React,{useEffect} from "react"; 
+import React,{Component} from "react"; 
 // import Client from "./components/Client"
 import {Provider} from "react-redux"
 // import {store} from "./Store/Store"
@@ -11,14 +11,16 @@ import Layout from "./components/Layout"
 import {store , persistor}  from './Store/Store'
 import { PersistGate } from 'redux-persist/integration/react'
 import SetAuthToken from "./utility/SetAuthToken"
-// import {userProfile} from "./Store/Actions/Auth"
+
 
 if(localStorage.token){
   SetAuthToken(localStorage.token);
 
 }
 
-const  App = () =>  {
+class App extends Component   {
+  
+  render(){
   
   return (
     
@@ -29,6 +31,8 @@ const  App = () =>  {
     </Provider>
   );
 }
+}
+
 
 export default App;
 

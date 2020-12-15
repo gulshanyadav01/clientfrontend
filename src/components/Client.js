@@ -7,17 +7,22 @@ import { GoArrowRight } from "react-icons/go";
 import {userProfile} from "../Store/Actions/Auth";
 
 import {BiMessageSquareAdd} from "react-icons/bi"
+import { FaTshirt } from 'react-icons/fa';
 
 
 
 class Client extends Component {
     componentDidMount(){
-        this.props.getClients();
+        if(this.props.token){
+            this.props.getClients();
+            this.props.userProfile();
+        }
+        
         // console.log(this.props.clients)
-        console.log(this.props.token);
-        console.log(this.props.error)
-        console.log(this.props.user);
-        this.props.userProfile();
+        // console.log(this.props.token);
+        // console.log(this.props.error)
+        // console.log(this.props.user);
+        
     }
     onDeleteHandler = (id) => {
         this.props.deleteClient(id);
